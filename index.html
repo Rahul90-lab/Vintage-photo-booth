@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Photo Booth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="photo-booth">
+        <div class="header">
+            <h1>📸 Vintage Photo Booth</h1>
+            <p>Strike a pose and capture the moment!</p>
+        </div>
+
+        <div class="camera-container">
+            <video id="video" autoplay muted playsinline></video>
+            <div class="filter-overlay" id="filterOverlay"></div>
+            <div class="countdown" id="countdown"></div>
+            <div class="photo-count" id="photoCount">0/4 photos</div>
+            <select class="camera-selector" id="cameraSelector" style="display: none;">
+                <option value="">📷 Select Camera</option>
+            </select>
+        </div>
+
+        <div class="controls">
+            <button class="settings-toggle" id="settingsToggle">⚙️ Photo Booth Settings</button>
+            
+            <div class="settings-panel" id="settingsPanel" style="display: none;">
+                <div class="settings-title">Photo Booth Settings</div>
+                
+                <div class="settings-row">
+                    <label for="photoCount">Number of Photos:</label>
+                    <select id="photoCountSelect">
+                        <option value="2">2 Photos</option>
+                        <option value="3">3 Photos</option>
+                        <option value="4" selected>4 Photos</option>
+                        <option value="5">5 Photos</option>
+                        <option value="6">6 Photos</option>
+                    </select>
+                </div>
+                
+                <div class="settings-row">
+                    <label for="countdownTime">Countdown Time:</label>
+                    <select id="countdownTimeSelect">
+                        <option value="1">1 Second</option>
+                        <option value="2">2 Seconds</option>
+                        <option value="3" selected>3 Seconds</option>
+                        <option value="5">5 Seconds</option>
+                        <option value="10">10 Seconds</option>
+                    </select>
+                </div>
+                
+                <div class="settings-title" style="margin-top: 15px;">Photo Strip Layout</div>
+                <div class="layout-options">
+                    <div class="layout-option layout-vertical active" data-layout="vertical">
+                        <div class="layout-option-inner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="layout-option layout-grid" data-layout="grid">
+                        <div class="layout-option-inner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="layout-option layout-collage" data-layout="collage">
+                        <div class="layout-option-inner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="none">Normal</button>
+                <button class="filter-btn" data-filter="sepia">Vintage</button>
+                <button class="filter-btn" data-filter="grayscale">B&W</button>
+                <button class="filter-btn" data-filter="blur">Dreamy</button>
+                <button class="filter-btn" data-filter="saturate">Vibrant</button>
+                <button class="filter-btn" data-filter="contrast">Dramatic</button>
+                <button class="filter-btn" data-filter="hue-rotate">Retro</button>
+                <button class="filter-btn" data-filter="invert">Negative</button>
+                <button class="filter-btn" data-filter="film-grain">Film Grain</button>
+                <button class="filter-btn" data-filter="vignette">Vignette</button>
+                <button class="filter-btn" data-filter="duotone">Duotone</button>
+            </div>
+
+            <button class="photo-btn" id="photoBtn">📷 Take Photo</button>
+        </div>
+
+        <div class="photo-strip" id="photoStrip">
+            <div class="strip-header">Your Photo Strip</div>
+            <div class="strip-photos" id="stripPhotos"></div>
+            <div class="compliment" id="compliment"></div>
+            <button class="download-btn" id="downloadBtn">📥 Download Photo Strip</button>
+            <button class="reset-btn" id="resetBtn">🔄 Take New Photos</button>
+        </div>
+    </div>
+
+    <div class="flash" id="flash"></div>
+    <div class="logo">Rahul</div>
+
+<script src="script.js"></script>
+</body>
+</html>
